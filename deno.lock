@@ -285,16 +285,5 @@
     "https://deno.land/x/importmap@0.2.1/mod.ts": "ae3d1cd7eabd18c01a4960d57db471126b020f23b37ef14e1359bbb949227ade",
     "https://deno.land/x/wasmbuild@0.15.1/cache.ts": "9d01b5cb24e7f2a942bbd8d14b093751fa690a6cde8e21709ddc97667e6669ed",
     "https://deno.land/x/wasmbuild@0.15.1/loader.ts": "8c2fc10e21678e42f84c5135d8ab6ab7dc92424c3f05d2354896a29ccfd02a63"
-  },
-  "workspace": {
-    "packageJson": {
-      "dependencies": [
-        "npm:esbuild-plugin-tsc@^0.4.0",
-        "npm:esbuild@^0.20.0",
-        "npm:lit@^3.1.1",
-        "npm:tslib@^2.6.2",
-        "npm:typescript@^5.3.3"
-      ]
-    }
   }
 }
