@@ -6,7 +6,9 @@
       "dom.asynciterable",
       "deno.ns",
       "deno.unstable"
-    ]
+    ],
+    "experimentalDecorators": true,
+    "strict": true
   },
   "imports": {
     "esbuild": "https://deno.land/x/esbuild@v0.20.0/mod.js",

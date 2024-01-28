@@ -1,7 +1,11 @@
-import * as esbuild from "esbuild";
-import { createBuildSettings } from './settings.ts';
+import { bundle } from "https://deno.land/x/emit/mod.ts";
 
-const settings = createBuildSettings({ minify: false });
-await esbuild.build(settings);
+const url = new URL("../src/element.ts", import.meta.url);
+const result = await bundle(url.href, { compilerOptions: { emitDecoratorMetadata: true, sourceMap: true
+}, importMap: "deno.json"});
 
-esbuild.stop();
+Deno.writeTextFileSync(`www/module.js`, result.code);
+
+// for (const [key, value] of result){
+//     Deno.writeTextFileSync(`www/${key}.js`, value);
+// }

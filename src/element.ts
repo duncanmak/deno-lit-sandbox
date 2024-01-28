@@ -16,13 +16,13 @@ export class MyElement extends LitElement {
    * The name to say "Hello" to.
    */
   @property()
-  accessor name = 'World';
+  name = 'Monde';
 
   /**
    * The number of times the button has been clicked.
    */
   @property({type: Number})
-  accessor count = 0;
+  count = 0;
 
   override render() {
     return html`
