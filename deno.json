@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "deno.ns",
+      "deno.unstable"
+    ]
+  },
+  "imports": {
+    "esbuild": "https://deno.land/x/esbuild@v0.20.0/mod.js",
+    "lit": "https://esm.sh/lit@3.1.0",
+    "lit/": "https://esm.sh/lit@3.1.0/",
+    "std/": "https://deno.land/std@0.213.0/"
+  },
+  "tasks": {
+    "build": "deno run -A scripts/build.ts",
+    "serve": "deno run -A scripts/serve.ts"
+  }
+}
