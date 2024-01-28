@@ -1,5 +1,5 @@
-import * as esbuild from "esbuild";
-import { createBuildSettings } from './settings.ts';
+import esbuild from 'esbuild';
+import { createBuildSettings } from './settings.js';
 
 const settings = createBuildSettings({ 
   sourcemap: true,
@@ -14,7 +14,7 @@ await ctx.watch();
 
 const { host, port } = await ctx.serve({
   port: 5500,
-  servedir: 'www',
+  servedir: 'dist',
   fallback: "www/index.html"
 });
 
