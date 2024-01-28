@@ -1,12 +1,25 @@
-import {LitElement, html, css} from "lit";
-import {customElement, property} from "lit/decorators.js";
+/**
+ * @license
+ * Copyright 2019 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
 
-@customElement("my-element")
+import {LitElement, html, css} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
+
+/**
+ * An example element.
+ *
+ * @fires count-changed - Indicates when the count changes
+ * @slot - This element has a slot
+ * @csspart button - The button
+ */
+@customElement('my-element')
 export class MyElement extends LitElement {
   static override styles = css`
     :host {
       display: block;
-      border: solid 1px gray;
+      border: solid 2px red;
       padding: 16px;
       max-width: 800px;
     }
@@ -16,7 +29,7 @@ export class MyElement extends LitElement {
    * The name to say "Hello" to.
    */
   @property()
-  name = 'Monde';
+  name = 'World';
 
   /**
    * The number of times the button has been clicked.

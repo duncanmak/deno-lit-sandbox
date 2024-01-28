@@ -8,6 +8,7 @@
       "deno.unstable"
     ],
     "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     "strict": true
   },
   "imports": {
