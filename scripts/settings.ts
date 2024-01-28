@@ -6,11 +6,11 @@ import esbuildPluginTsc from "npm:esbuild-plugin-tsc";
 export function createBuildSettings(options: object): esbuild.BuildOptions {
   return {
     plugins: [
-      ...denoPlugins({ configPath: path.resolve("./deno.json") }),
-      esbuildPluginTsc({ tsconfigPath: "./tsconfig.json", force: true }),
+      // ...denoPlugins({ configPath: path.resolve("./deno.json") }),
+      esbuildPluginTsc({ force: true }),
     ],
-    entryPoints: ["src/main.ts"],
-    outfile: "./www/module.js",
+    entryPoints: ["src/element.ts"],
+    outfile: "www/element.js",
     bundle: true,
     format: "esm",
     ...options,

@@ -1,10 +1,13 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "es6",
         "experimentalDecorators": false,
         "useDefineForClassFields": true,
-        "emitDecoratorMetadata": true,
         "forceConsistentCasingInFileNames": true,
-        "strict": true
+        "strict": true,
+        "moduleResolution": "NodeNext",
+        "module": "NodeNext",
+        "outDir": "www"
       },
+      "include": ["src/*"]
 }

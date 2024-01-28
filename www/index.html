@@ -3,11 +3,21 @@
         <title>Diff viewer</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script type="module" src="https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js"></script>
-        <script type="module" src="./module.js"></script>
+        <script type="importmap">
+            {
+              "imports":{
+                "lit":"https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js",
+                "lit/": "https://cdn.jsdelivr.net/npm/lit@3/",
+                "@lit/reactive-element": "https://cdn.jsdelivr.net/npm/@lit/reactive-element@2.0.3/reactive-element.js",
+                "@lit/reactive-element/": "https://cdn.jsdelivr.net/npm/@lit/reactive-element@2.0.3/",
+                "@lit/reactive-element/decorators/":"https://cdn.jsdelivr.net/npm/@lit/reactive-element@2.0.3/decorators/"
+              }
+            }
+          </script>
+        <script type="module" src="./element.js"></script>
     </head>
     <body>
         <h1>Hello World!</h1>
-        <diff-viewer></diff-viewer>
+        <my-element></my-element>
     </body>
 </html>

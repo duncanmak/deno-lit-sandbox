@@ -1,8 +1,8 @@
 import {LitElement, html, css} from "lit";
 import {customElement, property} from "lit/decorators.js";
 
-@customElement("diff-viewer")
-export class DiffViewer extends LitElement {
+@customElement("my-element")
+export class MyElement extends LitElement {
   static override styles = css`
     :host {
       display: block;
@@ -50,6 +50,6 @@ export class DiffViewer extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'diff-viewer': DiffViewer;
+    'my-element': MyElement;
   }
 }
