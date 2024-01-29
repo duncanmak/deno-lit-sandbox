@@ -5,8 +5,8 @@ export function createBuildSettings(options) {
     plugins: [
       esbuildPluginTsc({ force: true }),
     ],
-    entryPoints: ["src/element.ts"],
-    outfile: "dist/element.js",
+    entryPoints: ["src/main.ts"],
+    outfile: "dist/bundle.js",
     bundle: true,
     format: "esm",
     ...options,
