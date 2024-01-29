@@ -7,11 +7,12 @@
     "build": "node ./scripts/build.js",
     "start": "node ./scripts/serve.js",
     "analyze": "node ./scripts/analyze.js"
-   },
+  },
   "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@biomejs/biome": "1.5.3",
     "esbuild": "^0.20.0",
     "esbuild-plugin-tsc": "^0.4.0",
     "typescript": "^5.3.3"

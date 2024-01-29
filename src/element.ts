@@ -1,5 +1,5 @@
-import {LitElement, html, css} from "lit";
-import {customElement, property} from "lit/decorators.js";
+import { css, html, LitElement } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
 @customElement("my-element")
 export class MyElement extends LitElement {
@@ -16,12 +16,12 @@ export class MyElement extends LitElement {
    * The name to say "Hello" to.
    */
   @property()
-  accessor name = 'World';
+  accessor name = "World";
 
   /**
    * The number of times the button has been clicked.
    */
-  @property({type: Number})
+  @property({ type: Number })
   accessor count = 0;
 
   override render() {
@@ -36,7 +36,7 @@ export class MyElement extends LitElement {
 
   private _onClick() {
     this.count++;
-    this.dispatchEvent(new CustomEvent('count-changed'));
+    this.dispatchEvent(new CustomEvent("count-changed"));
   }
 
   /**
@@ -50,6 +50,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-element': MyElement;
+    "my-element": MyElement;
   }
 }
