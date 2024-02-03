@@ -13,7 +13,7 @@ import { typeByExtension } from "std/media_types/mod.ts";
 import { bundle } from "https://deno.land/x/emit@0.34.0/mod.ts";
 
 // Construct the refresh middleware.
-const refreshMiddleware = refresh({paths: ['src', 'www']});
+const refreshMiddleware = refresh({ paths: ["src", "www"] });
 
 const __dirname = fromFileUrl(dirname(import.meta.url));
 
@@ -24,33 +24,32 @@ const notFound = new Response("File not found", {
   },
 });
 
-
 async function lookup(pathname: string): Promise<Response> {
   const ext = extname(pathname);
   const headers = {
     headers: { "Content-Type": typeByExtension(ext) ?? "text/html" },
   };
 
-  const path = join(__dirname, "..", "www", pathname);
-  if (await exists(path, { isFile: true })) {
-    return new Response(await Deno.readTextFile(path), headers);
-  } else {
-    const path = format({
-      dir: join(__dirname, "..", "src"),
-      ext: "ts",
-      name: basename(pathname, "js"),
-    });
-    
-    if (await exists(path, {isFile: true})) {
-      const { code } = await bundle(path, {
-        compilerOptions: { emitDecoratorMetadata: true, sourceMap: true },
-        importMap: "deno.json",
-      });
-      return new Response(code, headers);
-    } else {
-      return notFound;
-    }
+  const wwwPath = join(__dirname, "..", "www", pathname);
+  if (await exists(wwwPath, { isFile: true })) {
+    return new Response(await Deno.readTextFile(wwwPath), headers);
   }
+
+  const jsPath = format({
+    dir: join(__dirname, "..", "src"),
+    ext: "ts",
+    name: basename(pathname, "js"),
+  });
+
+  if (await exists(jsPath, { isFile: true })) {
+    const { code } = await bundle(jsPath, {
+      compilerOptions: { emitDecoratorMetadata: true, sourceMap: true },
+      importMap: "deno.json",
+    });
+    return new Response(code, headers);
+  }
+
+  return notFound;
 }
 
 // Start a server on port `8000`.
